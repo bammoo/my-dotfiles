@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# get the name of the branch we are on
+function hgla() {
+  (cd ~/wdd/www.ifanr.com/wp-content/plugins; hg pull -u)
+  echo " \n"
+  (cd ~/wdd/www.ifanr.com/wp-content/themes; hg pull -u)
+  echo " \n"
+  (cd ~/wdd/www.ifanr.com/api; hg pull -u)
+}
+
+function hglsso() {
+  (cd ~/wdd/event.ifanr.com; hg pull -u)
+}
+
+alias hglb="hglsso"

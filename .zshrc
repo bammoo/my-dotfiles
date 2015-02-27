@@ -52,7 +52,8 @@ export PATH=/usr/local/share/npm/bin:$PATH
 REPO_SB=$HOME/wdd/event.ifanr.com
 REPO_THEME=$HOME/wdd/www.ifanr.com/wp-content/themes/apple4us
 REPO_PLUGINS=$HOME/wdd/www.ifanr.com/wp-content/plugins
-source /Users/apple/perl5/perlbrew/etc/bashrc
+SBLP=$HOME/Documents/sublime-projects
+source $HOME/perl5/perlbrew/etc/bashrc
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
@@ -61,16 +62,12 @@ export PATH=$HOME/local/bin:$PATH
 
 export PATH=/opt/local/bin:$PATH
 
-export PERL_LOCAL_LIB_ROOT="$PERL_LOCAL_LIB_ROOT:/Users/apple/perl5";
-export PERL_MB_OPT="--install_base /Users/apple/perl5";
-export PERL_MM_OPT="INSTALL_BASE=/Users/apple/perl5";
-export PERL5LIB="/Users/apple/perl5/lib/perl5:$PERL5LIB";
-export PATH="/Users/apple/perl5/bin:$PATH";
+export PERL_LOCAL_LIB_ROOT="$PERL_LOCAL_LIB_ROOT:$HOME/perl5";
+export PERL_MB_OPT="--install_base $HOME/perl5";
+export PERL_MM_OPT="INSTALL_BASE=$HOME/perl5";
+export PERL5LIB="$HOME/perl5/lib/perl5:$PERL5LIB";
+export PATH="$HOME/perl5/bin:$PATH";
 
 eval "$(fasd --init posix-alias zsh-hook)"
 
-if [ -f ~/dotfiles/my-dotfiles/.aliases ]; then
-  . ~/dotfiles/my-dotfiles/.aliases
-fi
-
-. ~/dotfiles/my-dotfiles/ip
+. ~/dotfiles/my-dotfiles/inc/*
