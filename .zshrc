@@ -70,4 +70,6 @@ export PATH="$HOME/perl5/bin:$PATH";
 
 eval "$(fasd --init posix-alias zsh-hook)"
 
-. ~/dotfiles/my-dotfiles/inc/*
+for f in ~/dotfiles/my-dotfiles/inc/*; 
+  do source $f; 
+done

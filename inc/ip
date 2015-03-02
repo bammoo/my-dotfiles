@@ -1,11 +1,10 @@
 #!/bin/bash
 
-# get the name of the branch we are on
+# get ip address
 function wip() {
-  # watch ip address
-  ifconfig | grep 'inet.*netmask.*broadcast' > ipadd
-
-  sed -i '' 's/inet\(.*\)netmask.*/\1/g' ipadd
-
-  cat ipadd && rm ipadd
+  ip=$(ifconfig  | grep -E 'inet.[0-9].*broadcast' | awk '{ print $2}')
+  # echo
+  echo $ip
+  # copy to clipboard
+  echo $ip |  tr -d '\n' | pbcopy
 }
