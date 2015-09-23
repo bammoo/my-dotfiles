@@ -42,7 +42,7 @@ ZSH_THEME="test"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git history mercurial)
+plugins=(git svn history mercurial)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -59,7 +59,7 @@ PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 # nodejs library
 export PATH=$HOME/local/bin:$PATH
-
+export PATH=/usr/local/bin:$PATH
 export PATH=/opt/local/bin:$PATH
 
 export PERL_LOCAL_LIB_ROOT="$PERL_LOCAL_LIB_ROOT:$HOME/perl5";
@@ -73,3 +73,7 @@ eval "$(fasd --init posix-alias zsh-hook)"
 for f in ~/dotfiles/my-dotfiles/inc/*; 
   do source $f; 
 done
+
+export NVM_DIR=~/.nvm
+source $(brew --prefix nvm)/nvm.sh
+# nvm alias default stable

@@ -24,3 +24,7 @@ alias b='/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl'
 alias bb='b .'
 
 alias hgll="hg log | grep '^user\?'|cut -d':' -f2|sort|uniq -c|sort -nr"
+
+# mysql
+alias mysqlstart='sudo /usr/local/mysql-5.5.30-osx10.6-x86_64/support-files/mysql.server start'
+alias mysqlstop='sudo /usr/local/mysql-5.5.30-osx10.6-x86_64/support-files/mysql.server stop' 
