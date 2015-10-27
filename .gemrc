@@ -3,7 +3,8 @@
 :bulk_threshold: 1000
 :benchmark: false
 :sources:
-- http://ruby.taobao.org/
+- https://rubygems.org/
+- https://ruby.taobao.org/
 :update_sources: true
 :verbose: true
 gem: --no-document

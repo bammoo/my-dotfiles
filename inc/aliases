@@ -21,8 +21,21 @@ alias oo='open .'
 
 # sublime text 2
 alias b='/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl'
-alias bb='b .'
+function bb {
+  local subl_proj
+  subl_proj=`find . -name "*.sublime-project" -d 1 | sort -r | head -1`
+  if [[ `echo -n $subl_proj | wc -m` -eq 0 ]]
+  then
+    echo 'Not found any subl project file.'
+    echo 'So open current folder in subl.'
+    b .
+  else
+    echo "Found $subl_proj"
+    b "$subl_proj"
+  fi
+}
 
+alias glu='git pull -u'
 alias hgll="hg log | grep '^user\?'|cut -d':' -f2|sort|uniq -c|sort -nr"
 
 # mysql

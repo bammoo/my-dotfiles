@@ -49,10 +49,6 @@ source $ZSH/oh-my-zsh.sh
 # Customize to your needs...
 export PATH=/usr/local/share/npm/bin:$PATH
 
-REPO_SB=$HOME/wdd/event.ifanr.com
-REPO_THEME=$HOME/wdd/www.ifanr.com/wp-content/themes/apple4us
-REPO_PLUGINS=$HOME/wdd/www.ifanr.com/wp-content/plugins
-SBLP=$HOME/Documents/sublime-projects
 source $HOME/perl5/perlbrew/etc/bashrc
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
