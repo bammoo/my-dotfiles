@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<root>
+  <item>
+    <name>Fuck ISO Keyboard Layout</name>
+    <appendix>( '§' to '`' and '`' to '\' )</appendix>
+    <identifier>remap.uk_saneuklayout_fuck</identifier>
+    <autogen>__KeyToKey__ KeyCode::UK_SECTION, KeyCode::BACKQUOTE</autogen>
+    <autogen>__KeyToKey__ KeyCode::BACKQUOTE, KeyCode::SHIFT_L</autogen>
+  </item>
+</root>
