@@ -21,6 +21,30 @@ alias oo='open .'
 
 # sublime text 2
 alias b='/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl'
-alias bb='b .'
+# `bb()` is very slow when the folder contain too many files.
+subl_template="${HOME}/dotfiles/my-dotfiles/cool-things/subl_template"
+function bb {
+  # TODO: 是否文件夹
+  local subl_proj
+  subl_proj=`find . -name "*.sublime-project" -d 1 | sort -r | head -1`
+  if [[ `echo -n $subl_proj | wc -m` -eq 0 ]]
+  then
+    # copy structure of sublime-project from template
+    S0="${BASH_SOURCE[0]}"
+    DIRNAME="$( dirname "$S0")"
+    DIR="$( cd "$DIRNAME" && pwd)"
+    foler_path=$DIR
+    echo $foler_path
+    eval "echo \"$(<${subl_template})\" > ${foler_path}\/0.sublime\-project"
+    b './0.sublime-project'
+  else
+    b $subl_proj
+  fi
+}
 
+alias glu='git pull -u'
 alias hgll="hg log | grep '^user\?'|cut -d':' -f2|sort|uniq -c|sort -nr"
+
+# mysql
+alias mysqlstart='sudo /usr/local/mysql-5.5.30-osx10.6-x86_64/support-files/mysql.server start'
+alias mysqlstop='sudo /usr/local/mysql-5.5.30-osx10.6-x86_64/support-files/mysql.server stop' 

@@ -1,0 +1,13 @@
+#!/bin/bash
+
+S0="${BASH_SOURCE[0]}"
+
+DIRNAME="$( dirname "$S0")"
+
+DIR="$( cd "$DIRNAME" && pwd)"
+
+echo "$S0"
+
+echo "$DIRNAME"
+
+echo "$DIR"
