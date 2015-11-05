@@ -1,0 +1,22 @@
+{
+  \"folders\":
+  [
+    {
+      \"file_exclude_patterns\":
+      [
+        \"*.sublime-workspace\",
+        \"*.scssc\",
+        \"*.orig\"
+      ],
+      \"folder_exclude_patterns\":
+      [
+        \".svn\",
+        \".git\",
+        \".hg\",
+        \"CVS\",
+        \"node_modules\"
+      ],
+      \"path\": \"${foler_path}\"
+    }
+  ]
+}

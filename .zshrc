@@ -66,10 +66,12 @@ export PATH="$HOME/perl5/bin:$PATH";
 
 eval "$(fasd --init posix-alias zsh-hook)"
 
-for f in ~/dotfiles/my-dotfiles/inc/*; 
+for f in ~/dotfiles/my-dotfiles/auto-includes/*; 
   do source $f; 
 done
 
+
 export NVM_DIR=~/.nvm
 source $(brew --prefix nvm)/nvm.sh
-# nvm alias default stable
+nvm alias default v0.12.7
+nvm use default
