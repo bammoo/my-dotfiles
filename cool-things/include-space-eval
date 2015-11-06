@@ -1,0 +1,18 @@
+#!/bin/bash
+
+foler_path="/Users/apple/Library/Application Support/Sublime Text 2/Packages"
+
+DIRNAME="$( echo ${foler_path//\//\\/} )"
+file_path1="$( echo ${DIRNAME// /\\ } )"
+# echo $file_path1
+# echo "$(${foler_path1// /.})"
+# file_path2="${foler_path1// /\\ }"
+# echo $file_path2
+# file_path2=${foler_path1//\/\\/}
+
+file_path="$( echo \"${file_path1}\/0.sublime\-project\" )"
+touch $file_path
+exit
+echo "$( echo \"asdfsdfdsfs\" > ${file_path} )"
+eval "echo \"asdfsdfdsfs\" > ${file_path}"
+cat $file_path

@@ -35,7 +35,7 @@ function bb {
     DIR="$( cd "$DIRNAME" && pwd)"
     foler_path=$DIR
     echo $foler_path
-    eval "echo \"$(<${subl_template})\" > ${foler_path}\/0.sublime\-project"
+    eval "echo \"$(<${subl_template})\" > \"${foler_path}\"\/0.sublime\-project"
     b './0.sublime-project'
   else
     b $subl_proj
