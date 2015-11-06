@@ -6,5 +6,7 @@
     <identifier>remap.uk_saneuklayout_fuck</identifier>
     <autogen>__KeyToKey__ KeyCode::UK_SECTION, KeyCode::BACKQUOTE</autogen>
     <autogen>__KeyToKey__ KeyCode::BACKQUOTE, KeyCode::SHIFT_L</autogen>
+    <autogen>__KeyToKey__ KeyCode::BACKSLASH, KeyCode::ENTER</autogen>
+    <autogen>__KeyToKey__ KeyCode::OPTION_R, KeyCode::BACKSLASH</autogen>
   </item>
 </root>
