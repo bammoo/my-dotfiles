@@ -1,24 +1,105 @@
-# my-dotfiles 配置 oh-my-zsh 等 shell
+# oh-my-zsh 配置
 
-# 常用
-  - `alias oo='open .'` 使用 `oo` 打开当前（pwd）所在位置目录
-  - `alias o='open'` 代替 `open` 打开某个目录
-  
-
-# sublime text 2 在 shell 中运用
-注意修改 app 路径
+## 安装
+fork 当前 repo 并 `git clone` 到自己的 home 目录下，如
 
 ```
-alias b='/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl'
-alias bb='b .'  
+git clone https://github.com/bammoo/my-dotfiles.git ~/my-dotfiles
+```
+
+把 `~/.zshrc` 里面自定义的内容手动复制到 `~/my-dotfiles/.zshrc` 中
+
+执行：
+
+```
+#删除 `~/.zshrc`
+rm ~/.zshrc
+#建立映射
+ln ~/my-dotfiles/.zshrc ~/.zshrc
 ```
 
 
-# copy without newline
-比如 `copy pwd` 得到当前路径（末尾没有换行符）
+# 示例
+
+## 简化 finder open 
+
+###在 finder 中打开当前（pwd）所在位置目录
+```
+oo
+```
+或
 
 ```
-copy () { 
-  `$1 | tr -d '\n' | pbcopy`; 
-}
+o ./
+```
+
+###在 finder 中打开某个目录
+```
+o ~/www/test/
+```
+
+## sublime text 2
+
+###在 subl 中打开当前目录
+
+```
+bb ./
+``` 
+或 
+
+```
+bb
+```
+
+###在 subl 中打开某个文件
+
+```
+b ./test.html
+```
+
+###在 subl 中打开某个目录
+
+```
+b ~/www/test/
+```
+
+
+
+##复制当前目录
+得到当前路径（末尾没有换行符）
+
+```
+copy pwd
+```
+
+
+
+##快捷进入当前目录的上上上级目录
+zsh 有 `..` 和 `...` 了，就差这个了，哈哈。
+
+```
+....
+```
+
+
+
+
+##得到当前 ip 地址
+如果有多个网卡，会得到多个地址
+
+```
+wip
+```
+
+###结果
+1个 ip 地址得到
+
+```
+192.168.1.100
+```
+多个 ip 地址得到
+
+```
+192.168.1.100
+192.168.2.100
 ```
