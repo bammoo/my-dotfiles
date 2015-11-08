@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # copy without newline
 copy () { 
   `$1 | tr -d '\n' | pbcopy`; 
@@ -21,9 +23,10 @@ alias oo='open .'
 
 # sublime text 2
 alias b='/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl'
+alias b3='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
 # `bb()` is very slow when the folder contain too many files.
 subl_template="${HOME}/dotfiles/my-dotfiles/tmpl/subl_template"
-function bb {
+function get_sublime_project {
   # TODO: 是否文件夹
   local subl_proj
   subl_proj=`find . -name "*.sublime-project" -d 1 | sort -r | head -1`
@@ -36,11 +39,12 @@ function bb {
     foler_path=$DIR
     echo $foler_path
     eval "echo \"$(<${subl_template})\" > \"${foler_path}\"\/0.sublime\-project"
-    b './0.sublime-project'
-  else
-    b $subl_proj
+    subl_proj='./0.sublime-project'
   fi
+  echo "$subl_proj"
 }
+alias bb='b $(get_sublime_project)'
+alias bb3='b3 $(get_sublime_project)'
 
 alias glu='git pull -u'
 alias hgll="hg log | grep '^user\?'|cut -d':' -f2|sort|uniq -c|sort -nr"

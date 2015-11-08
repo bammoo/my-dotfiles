@@ -1,0 +1,8 @@
+#!/bin/bash
+
+function aaa {
+  echo 'aaa'
+}
+
+aaab=aaa
+echo $aaab
