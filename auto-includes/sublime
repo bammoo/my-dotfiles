@@ -1,0 +1,70 @@
+#!/bin/bash
+
+
+# sublime text 2
+alias _b='/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl'
+# sublime text 3
+alias _b3='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
+
+
+subl_template="${HOME}/dotfiles/my-dotfiles/tmpl/subl_template"
+function get_sublime_project {
+  local subl_proj
+  subl_proj=`find $1 -maxdepth 1 -name "*.sublime-project" -d 1 | sort -r | head -1`
+  if [[ `echo -n $subl_proj | wc -m` -eq 0 ]]
+  then
+    # copy structure of sublime-project from template
+    S0="${BASH_SOURCE[0]}"
+    DIRNAME="$( dirname "$S0")"
+    DIR="$( cd "$DIRNAME" && pwd)"
+    foler_path=$DIR
+    echo $foler_path
+    eval "echo \"$(<${subl_template})\" > \"${foler_path}\"\/0.sublime\-project"
+    subl_proj='./0.sublime-project'
+  fi
+  echo "$subl_proj"
+}
+function b {
+  if [ -z "$1" ]; then
+    return
+  fi
+
+  local subl_proj
+  local open_file
+  if [[ -d $1 ]]; then
+    # echo 'is a folder'
+    # is quotes already in get_sublime_project
+    subl_proj=$(get_sublime_project $1)
+    # echo "$subl_proj"
+    open_file=$subl_proj
+  else
+    # echo 'is a file'
+    # Do not check file exsits here, as may create file through this
+    open_file=$1
+  fi
+
+  _b $open_file
+}
+function b3 {
+  if [ -z "$1" ]; then
+    return
+  fi
+
+  local subl_proj
+  local open_file
+  if [[ -d $1 ]]; then
+    # echo 'is a folder'
+    # is quotes already in get_sublime_project
+    subl_proj=$(get_sublime_project $1)
+    # echo "$subl_proj"
+    open_file=$subl_proj
+  else
+    # echo 'is a file'
+    # Do not check file exsits here, as may create file through this
+    open_file=$1
+  fi
+
+  _b3 $open_file
+}
+alias bb='b .'
+alias bb3='b3 .'
