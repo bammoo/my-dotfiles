@@ -18,7 +18,6 @@ function get_sublime_project {
     DIRNAME="$( dirname "$S0")"
     DIR="$( cd "$DIRNAME" && pwd)"
     foler_path=$DIR
-    echo $foler_path
     eval "echo \"$(<${subl_template})\" > \"${foler_path}\"\/0.sublime\-project"
     subl_proj='./0.sublime-project'
   fi
