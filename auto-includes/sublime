@@ -29,9 +29,6 @@ function get_sublime_project {
     if [ "${run_path:0:1}" = "/" ]; then
       abs_folder_path=$run_path
     else
-      # S0="${BASH_SOURCE[0]}"
-      # DIRNAME="$( dirname "$S0")"
-      # DIR="$( cd "$DIRNAME" && pwd)"
       abs_folder_path="$( cd "$run_path" && pwd)"
     fi
     # echo "abs_folder_path: $abs_folder_path"
@@ -39,11 +36,12 @@ function get_sublime_project {
     # echo "echo \"$(<${subl_template})\" > \"${run_path}\"\/0.sublime\-project"
     eval "echo \"$(<${subl_template})\" > \"${run_path}\"\/0.sublime\-project"
     subl_proj="$abs_folder_path/0.sublime-project"
-    echo "create $subl_proj"
+    # echo "create $subl_proj"
   fi
-  echo "find $subl_proj"
+  echo "$subl_proj"
 }
-function b {
+
+function bfunc {
   if [ -z "$1" ]; then
     return
   fi
@@ -52,38 +50,39 @@ function b {
   local open_file
   # if is a folder
   if [[ -d $1 ]]; then
-    # is quotes already in get_sublime_project
+    # quotes are already added in get_sublime_project
     subl_proj=$(get_sublime_project $1)
     # echo "$subl_proj"
     open_file=$subl_proj
   else
-    # echo 'is a file'
-    # Do not check file exsits here, as may create file through this
+    # No matter file exsits or not, return it back
+    # get abs path
+    # S0="${BASH_SOURCE[0]}"
+    # DIRNAME="$( dirname "$S0")"
+    # DIR="$( cd "$DIRNAME" && pwd)"
     open_file=$1
   fi
+  echo "$open_file"
+}
 
-  _b $open_file
+function b {
+  local f
+  f=$(bfunc $1)
+  # return
+  if [ ! -z "$f" ]; then
+    echo "open $f"
+    _b $f
+  fi
 }
 function b3 {
-  if [ -z "$1" ]; then
-    return
+  local f
+  f=$(bfunc $1)
+  # return
+  if [ ! -z "$f" ]; then
+    echo "open $f"
+    _b3 $f
   fi
-
-  local subl_proj
-  local open_file
-  # if is a folder
-  if [[ -d $1 ]]; then
-    # is quotes already in get_sublime_project
-    subl_proj=$(get_sublime_project $1)
-    # echo "$subl_proj"
-    open_file=$subl_proj
-  else
-    # echo 'is a file'
-    # Do not check file exsits here, as may create file through this
-    open_file=$1
-  fi
-
-  _b3 $open_file
 }
+
 alias bb='b .'
 alias bb3='b3 .'
