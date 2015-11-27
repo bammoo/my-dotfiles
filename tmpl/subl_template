@@ -16,7 +16,7 @@
         \"CVS\",
         \"node_modules\"
       ],
-      \"path\": \"${foler_path}\"
+      \"path\": \"${abs_folder_path}\"
     }
   ]
 }

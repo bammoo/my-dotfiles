@@ -6,38 +6,42 @@ alias _b='/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl'
 # sublime text 3
 alias _b3='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
 
-
+# sublime text project file template
 subl_template="${HOME}/dotfiles/my-dotfiles/tmpl/subl_template"
+
 function get_sublime_project {
   local subl_proj
-  local folder_path
+  local abs_folder_path
+  local run_path
+  # If is no input folder param
   if [ -z "$1" ]; then
-    run_foler_path=.
+    run_path=.
   else
-    run_foler_path=$1
+    run_path=$1
   fi
-  subl_proj=`find $run_foler_path -maxdepth 1 -name "*.sublime-project" -d 1 | sort -r | head -1`
+  subl_proj=`find $run_path -maxdepth 1 -name "*.sublime-project" -d 1 | sort -r | head -1`
   # echo "$subl_proj"
-  # return
+  # Create if there not exist project file
   if [[ `echo -n $subl_proj | wc -m` -eq 0 ]]
   then
-    # Should use abs folder_path 
-    # echo "${run_folder_path:0:1}"
-    if [ "${run_folder_path:0:1}" = "/" ]; then
-      foler_path=$run_folder_path
+    # If is relative run_path 
+    # echo "${run_path:0:1}"
+    if [ "${run_path:0:1}" = "/" ]; then
+      abs_folder_path=$run_path
     else
-      S0="${BASH_SOURCE[0]}"
-      DIRNAME="$( dirname "$S0")"
-      DIR="$( cd "$DIRNAME" && pwd)"
-      foler_path=$DIR'/'$run_foler_path
+      # S0="${BASH_SOURCE[0]}"
+      # DIRNAME="$( dirname "$S0")"
+      # DIR="$( cd "$DIRNAME" && pwd)"
+      abs_folder_path="$( cd "$run_path" && pwd)"
     fi
-    # echo "foler_path: $foler_path"
+    # echo "abs_folder_path: $abs_folder_path"
     # copy structure of sublime-project from template
-    # echo "echo \"$(<${subl_template})\" > \"${run_foler_path}\"\/0.sublime\-project"
-    eval "echo \"$(<${subl_template})\" > \"${run_foler_path}\"\/0.sublime\-project"
-    subl_proj="$foler_path/0.sublime-project"
+    # echo "echo \"$(<${subl_template})\" > \"${run_path}\"\/0.sublime\-project"
+    eval "echo \"$(<${subl_template})\" > \"${run_path}\"\/0.sublime\-project"
+    subl_proj="$abs_folder_path/0.sublime-project"
+    echo "create $subl_proj"
   fi
-  echo "$subl_proj"
+  echo "find $subl_proj"
 }
 function b {
   if [ -z "$1" ]; then
@@ -46,8 +50,8 @@ function b {
 
   local subl_proj
   local open_file
+  # if is a folder
   if [[ -d $1 ]]; then
-    # echo 'is a folder'
     # is quotes already in get_sublime_project
     subl_proj=$(get_sublime_project $1)
     # echo "$subl_proj"
@@ -67,8 +71,8 @@ function b3 {
 
   local subl_proj
   local open_file
+  # if is a folder
   if [[ -d $1 ]]; then
-    # echo 'is a folder'
     # is quotes already in get_sublime_project
     subl_proj=$(get_sublime_project $1)
     # echo "$subl_proj"
