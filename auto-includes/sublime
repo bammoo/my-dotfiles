@@ -31,11 +31,12 @@ function get_sublime_project {
     else
       abs_folder_path="$( cd "$run_path" && pwd)"
     fi
+    project_name=`basename $abs_folder_path`
     # echo "abs_folder_path: $abs_folder_path"
     # copy structure of sublime-project from template
     # echo "echo \"$(<${subl_template})\" > \"${run_path}\"\/0.sublime\-project"
-    eval "echo \"$(<${subl_template})\" > \"${run_path}\"\/0.sublime\-project"
-    subl_proj="$abs_folder_path/0.sublime-project"
+    subl_proj="$abs_folder_path/$project_name.sublime-project"
+    eval "echo \"$(<${subl_template})\" > \"${subl_proj}\""
     # echo "create $subl_proj"
   fi
   echo "$subl_proj"
