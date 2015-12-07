@@ -2,14 +2,14 @@
 
 
 # sublime text 2
-alias _b='/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl'
+alias sublime_text__bin_b='/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl'
 # sublime text 3
-alias _b3='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
+alias sublime_text__bin_b3='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
 
 # sublime text project file template
 subl_template="${HOME}/dotfiles/my-dotfiles/tmpl/subl_template"
 
-function get_sublime_project {
+function sublime_text__get_project {
   local subl_proj
   local abs_folder_path
   local run_path
@@ -42,7 +42,7 @@ function get_sublime_project {
   echo "$subl_proj"
 }
 
-function bfunc {
+function sublime_text__bfunc {
   if [ -z "$1" ]; then
     return
   fi
@@ -51,8 +51,8 @@ function bfunc {
   local open_file
   # if is a folder
   if [[ -d $1 ]]; then
-    # quotes are already added in get_sublime_project
-    subl_proj=$(get_sublime_project $1)
+    # quotes are already added in sublime_text__get_project
+    subl_proj=$(sublime_text__get_project $1)
     # echo "$subl_proj"
     open_file=$subl_proj
   else
@@ -66,24 +66,24 @@ function bfunc {
   echo "$open_file"
 }
 
-function b {
+function sublime_text__b {
   local f
-  f=$(bfunc $1)
+  f=$(sublime_text__bfunc $1)
   # return
   if [ ! -z "$f" ]; then
     echo "open $f"
-    _b $f
+    sublime_text__bin_b $f
   fi
 }
-function b3 {
+function sublime_text__b3 {
   local f
-  f=$(bfunc $1)
+  f=$(sublime_text__bfunc $1)
   # return
   if [ ! -z "$f" ]; then
     echo "open $f"
-    _b3 $f
+    sublime_text__bin_b3 $f
   fi
 }
 
-alias bb='b .'
-alias bb3='b3 .'
+alias bb='sublime_text__b .'
+alias bb3='sublime_text__b3 .'
