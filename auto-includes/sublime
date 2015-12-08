@@ -2,9 +2,9 @@
 
 
 # sublime text 2
-alias sublime_text__bin_b='/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl'
+alias b='/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl'
 # sublime text 3
-alias sublime_text__bin_b3='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
+alias b3='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
 
 # sublime text project file template
 subl_template="${HOME}/dotfiles/my-dotfiles/tmpl/subl_template"
@@ -72,7 +72,7 @@ function sublime_text__b {
   # return
   if [ ! -z "$f" ]; then
     echo "open $f"
-    sublime_text__bin_b $f
+    b $f
   fi
 }
 function sublime_text__b3 {
@@ -81,7 +81,7 @@ function sublime_text__b3 {
   # return
   if [ ! -z "$f" ]; then
     echo "open $f"
-    sublime_text__bin_b3 $f
+    b3 $f
   fi
 }
 
