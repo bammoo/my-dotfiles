@@ -1,10 +1,13 @@
 #!/bin/bash
 
+# Use `b` or `ob` to open file
+# Use `b xx` or `bb` to folder with project workspace
+# Use `ob xx` to open without project workspace
 
 # sublime text 2
-alias b='/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl'
+alias ob='/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl'
 # sublime text 3
-alias b3='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
+alias ob3='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
 
 # sublime text project file template
 subl_template="${HOME}/dotfiles/my-dotfiles/tmpl/subl_template"
@@ -66,24 +69,24 @@ function sublime_text__bfunc {
   echo "$open_file"
 }
 
-function sublime_text__b {
+function b {
   local f
   f=$(sublime_text__bfunc $1)
   # return
   if [ ! -z "$f" ]; then
     echo "open $f"
-    b $f
+    ob $f
   fi
 }
-function sublime_text__b3 {
+function b3 {
   local f
   f=$(sublime_text__bfunc $1)
   # return
   if [ ! -z "$f" ]; then
     echo "open $f"
-    b3 $f
+    ob3 $f
   fi
 }
 
-alias bb='sublime_text__b .'
-alias bb3='sublime_text__b3 .'
+alias bb='b .'
+alias bb3='b3 .'
