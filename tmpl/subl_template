@@ -5,16 +5,36 @@
       \"file_exclude_patterns\":
       [
         \"*.sublime-workspace\",
+        \"*.pyc\",
         \"*.scssc\",
+        \"*.DS_Store\",
         \"*.orig\"
+        \"*.pyc\",
+        \"*.pyo\",
+        \"*.exe\",
+        \"*.dll\",
+        \"*.obj\",  
+        \"*.o\",
+        \"*.a\",
+        \"*.lib\",
+        \"*.so\",
+        \"*.orig\",
+        \"*.DS_Store\",
+        \"*.css.map\",
+        \"*.scssc\",
+        \"*.orig\",
+        \"*.sublime-workspace\",
       ],
       \"folder_exclude_patterns\":
       [
+        \".sass-cache\",
+        \"*.idea\",
+        \"CVS\",
+        \".sync\",
         \".svn\",
         \".git\",
         \".hg\",
-        \"CVS\",
-        \"node_modules\"
+        \"node_modules\/node_modules\"
       ],
       \"path\": \"${abs_folder_path}\"
     }
