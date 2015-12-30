@@ -17,7 +17,7 @@ ZSH_THEME="test"
 # CASE_SENSITIVE="true"
 
 # Comment this out to disable bi-weekly auto-update checks
-# DISABLE_AUTO_UPDATE="true"
+DISABLE_AUTO_UPDATE="true"
 
 # Uncomment to change how often before auto-updates occur? (in days)
 # export UPDATE_ZSH_DAYS=13
@@ -41,8 +41,8 @@ ZSH_THEME="test"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git svn history mercurial)
+# Example format: plugins=(rails git textmate ruby lighthouse mercurial)
+plugins=(git svn history)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -70,8 +70,7 @@ for f in ~/dotfiles/my-dotfiles/auto-includes/*;
   do source $f; 
 done
 
-
-export NVM_DIR=~/.nvm
-source $(brew --prefix nvm)/nvm.sh
-nvm alias default v0.12.7
-nvm use default
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
+# nvm alias default v0.12.7
+# nvm use default
