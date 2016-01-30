@@ -1,0 +1,6 @@
+#!/bin/bash
+
+# cnpm
+alias ci='cnpm install'
+alias cis='cnpm install --save'
+alias cid='cnpm install --save-dev'
