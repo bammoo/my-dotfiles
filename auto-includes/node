@@ -2,5 +2,6 @@
 
 # cnpm
 alias ci='cnpm install'
+alias cig='cnpm install --global'
 alias cis='cnpm install --save'
 alias cid='cnpm install --save-dev'
