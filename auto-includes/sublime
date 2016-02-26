@@ -5,11 +5,12 @@
 # Use `ob xx` to open without project workspace
 
 # sublime text 2
-alias ob='/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl'
+alias ob2='/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl'
 # sublime text 3
 alias ob3='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
-alias obb='ob .'
+alias obb2='ob2 .'
 alias obb3='ob3 .'
+alias obb='ob3 .'
 # sublime text project file template
 subl_template="${HOME}/dotfiles/my-dotfiles/tmpl/subl_template"
 
@@ -70,13 +71,13 @@ function sublime_text__bfunc {
   echo "$open_file"
 }
 
-function b {
+function b2 {
   local f
   f=$(sublime_text__bfunc $1)
   # return
   if [ ! -z "$f" ]; then
     echo "open $f"
-    ob $f
+    ob2 $f
   fi
 }
 function b3 {
@@ -89,5 +90,6 @@ function b3 {
   fi
 }
 
-alias bb='b .'
+alias bb2='b2 .'
 alias bb3='b3 .'
+alias bb='b3 .'
