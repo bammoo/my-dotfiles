@@ -4,5 +4,6 @@
 function git_archive_branch {
   git tag archive/$1 $1
   git checkout master
-  git branch -d $1
+  git branch --delete $1
+  git push origin --delete $1
 }
