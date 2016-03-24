@@ -1,2 +1,5 @@
 
 auto-includes/_only_local_use
+
+*.sublime-project
+*.sublime-workspace

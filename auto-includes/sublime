@@ -90,6 +90,7 @@ function b3 {
   fi
 }
 
+alias b='b3'
 alias bb2='b2 .'
 alias bb3='b3 .'
 alias bb='b3 .'
