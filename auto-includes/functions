@@ -7,3 +7,24 @@ function git_archive_branch {
   git branch --delete $1
   git push origin --delete $1
 }
+
+# 下载 github repo 后，解压并在 sublime 中打开项目
+function ddv {
+  if [ -z "$1" ]; then
+    return
+  fi
+  local github_file_name
+  github_file_name="$HOME/Downloads/$1-master.zip"
+  extract_folder_name="$HOME/Downloads/$1-master"
+  if [[ `echo -n $github_file_name | wc -m` -eq 0 ]]; then
+  else
+    unzip "$github_file_name" -d "$HOME/Downloads/"
+    if [[ -d $extract_folder_name ]]; then
+      b3 "$extract_folder_name"
+    else
+      echo "解压出错!"
+    fi
+    
+  fi
+}
+

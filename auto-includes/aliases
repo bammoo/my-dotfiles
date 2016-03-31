@@ -22,6 +22,8 @@ alias chrome='open -a "Google Chrome"'
 alias o='open'
 alias oo='open .'
 
+alias gl='git pull'
+alias gp='git push'
 alias glu='git pull -u'
 alias hgll="hg log | grep '^user\?'|cut -d':' -f2|sort|uniq -c|sort -nr"
 
