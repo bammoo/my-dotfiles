@@ -16,15 +16,18 @@ function ddv {
   local github_file_name
   github_file_name="$HOME/Downloads/$1-master.zip"
   extract_folder_name="$HOME/Downloads/$1-master"
-  if [[ `echo -n $github_file_name | wc -m` -eq 0 ]]; then
+  if [[ -d $extract_folder_name ]]; then
+    b3 "$extract_folder_name"
   else
-    unzip "$github_file_name" -d "$HOME/Downloads/"
-    if [[ -d $extract_folder_name ]]; then
-      b3 "$extract_folder_name"
+    if [[ `echo -n $github_file_name | wc -m` -eq 0 ]]; then
     else
-      echo "解压出错!"
+      unzip "$github_file_name" -d "$HOME/Downloads/"
+      if [[ -d $extract_folder_name ]]; then
+        b3 "$extract_folder_name"
+      else
+        echo "解压出错!"
+      fi
     fi
-    
   fi
 }
 
