@@ -6,3 +6,6 @@ alias cig='cnpm install --global'
 alias clsg='cnpm ls --global'
 alias cis='cnpm install --save'
 alias cid='cnpm install --save-dev'
+
+alias cuis='cnpm uninstall --save'
+alias cuid='cnpm uninstall --save-dev'
