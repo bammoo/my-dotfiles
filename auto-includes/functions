@@ -41,9 +41,9 @@ function ddv {
   fi
   # 有一些 github repo 不是 master 分支
   local f
-  f=$(_ddv_find_file "$HOME/Downloads/$1-master")
+  f=$(_ddv_find_file "$DDV_DOWNLOAD_DIR/$1-master")
   if [ -z "$f" ]; then
-    f=$(_ddv_find_file "$HOME/Downloads/$1")
+    f=$(_ddv_find_file "$DDV_DOWNLOAD_DIR/$1")
   fi
   # echo "$f"
   err=$(_ddv_open "$f")
