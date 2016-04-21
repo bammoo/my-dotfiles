@@ -36,7 +36,7 @@
         \".hg\",
         \"node_modules/node_modules\"
       ],
-      \"path\": \"${abs_folder_path}\"
+      \"path\": \"./\"
     }
   ]
 }
