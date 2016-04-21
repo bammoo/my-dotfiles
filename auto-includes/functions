@@ -25,8 +25,9 @@ function _ddv_open {
     b3 "$1"
   elif [[ -f "$1"  ]]; then
     unzip "$1" -d "$HOME/Downloads/"
-    if [[ -d $1 ]]; then
-      b3 "$1"
+    folder=${1:0:${#1}-4}
+    if [[ -d $folder ]]; then
+      b3 "$folder"
     else
       echo "解压出错!"
     fi
