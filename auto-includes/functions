@@ -24,7 +24,7 @@ function _ddv_open {
   if [[ -d $1 ]]; then
     b3 "$1"
   elif [[ -f "$1"  ]]; then
-    unzip "$1" -d "$HOME/Downloads/"
+    unzip "$1" -d "$DDV_DOWNLOAD_DIR/"
     folder=${1:0:${#1}-4}
     if [[ -d $folder ]]; then
       b3 "$folder"
@@ -41,11 +41,13 @@ function ddv {
   fi
   # 有一些 github repo 不是 master 分支
   local f
-  f=$(_ddv_find_file "$DDV_DOWNLOAD_DIR/$1-master")
+  f=$(_ddv_find_file "$DDV_DOWNLOAD_DIR/$1")
   if [ -z "$f" ]; then
-    f=$(_ddv_find_file "$DDV_DOWNLOAD_DIR/$1")
+    f=$(_ddv_find_file "$DDV_DOWNLOAD_DIR/$1-master")
   fi
-  # echo "$f"
+  if [ -z "$f" ]; then
+    f=$(_ddv_find_file "$DDV_DOWNLOAD_DIR/$1-dev")
+  fi
   err=$(_ddv_open "$f")
   echo "$err"
 }
