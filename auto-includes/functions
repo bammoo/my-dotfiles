@@ -48,6 +48,11 @@ function ddv {
   if [ -z "$f" ]; then
     f=$(_ddv_find_file "$DDV_DOWNLOAD_DIR/$1-dev")
   fi
+  # let fasd remember this folder path
+  if [[ -d $f ]]; then
+    local current_dir=$PWD
+    fasd --add "$f"
+  fi
   err=$(_ddv_open "$f")
   echo "$err"
 }
