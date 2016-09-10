@@ -8,9 +8,7 @@
 alias ob2='/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl'
 # sublime text 3
 alias ob3='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
-alias obb2='ob2 .'
-alias obb3='ob3 .'
-alias obb='ob3 .'
+
 # sublime text project file template
 subl_template="${HOME}/dotfiles/my-dotfiles/tmpl/subl_template"
 
@@ -91,6 +89,4 @@ function b3 {
 }
 
 alias b='b3'
-alias bb2='b2 .'
-alias bb3='b3 .'
 alias bb='b3 .'

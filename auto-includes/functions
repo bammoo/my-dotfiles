@@ -56,4 +56,3 @@ function ddv {
   err=$(_ddv_open "$f")
   echo "$err"
 }
-

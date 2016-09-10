@@ -9,3 +9,9 @@ alias cid='cnpm install --save-dev'
 
 alias cuis='cnpm uninstall --save'
 alias cuid='cnpm uninstall --save-dev'
+
+
+# view npm module latest version 
+mver() {
+  npm view ${1} dist-tags
+}
