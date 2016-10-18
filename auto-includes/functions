@@ -27,6 +27,8 @@ function _ddv_open {
     unzip "$1" -d "$DDV_DOWNLOAD_DIR/"
     folder=${1:0:${#1}-4}
     if [[ -d $folder ]]; then
+      # let fasd remember this folder path
+      fasd --add "$f"
       b3 "$folder"
     else
       echo "解压出错!"
@@ -48,11 +50,7 @@ function ddv {
   if [ -z "$f" ]; then
     f=$(_ddv_find_file "$DDV_DOWNLOAD_DIR/$1-dev")
   fi
-  # let fasd remember this folder path
-  if [[ -d $f ]]; then
-    local current_dir=$PWD
-    fasd --add "$f"
-  fi
   err=$(_ddv_open "$f")
   echo "$err"
 }
+

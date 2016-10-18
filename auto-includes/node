@@ -15,3 +15,7 @@ alias cuid='cnpm uninstall --save-dev'
 mver() {
   npm view ${1} dist-tags
 }
+# view module version in node_modules
+cver() {
+  cat node_modules/${1}/package.json | grep 'version'
+}
