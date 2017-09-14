@@ -17,9 +17,9 @@ function git_prompt_info() {
   fi
 }
 
-function hg_ps1() {
-  hg prompt "$ZSH_THEME_HG_PROMPT_PREFIX{{branch}}{ at {bookmark}}{status}$ZSH_THEME_HG_PROMPT_SUFFIX" 2> /dev/null
-}
+# function hg_ps1() {
+#   hg prompt "$ZSH_THEME_HG_PROMPT_PREFIX{{branch}}{ at {bookmark}}{status}$ZSH_THEME_HG_PROMPT_SUFFIX" 2> /dev/null
+# }
 
 function my_git_prompt_info() {
   ref=$(git symbolic-ref HEAD 2> /dev/null) || return
@@ -49,4 +49,4 @@ ZSH_THEME_GIT_PROMPT_RENAMED="~"
 ZSH_THEME_GIT_PROMPT_DELETED="!"
 ZSH_THEME_GIT_PROMPT_UNMERGED="?"
 
-PROMPT='%{$fg[cyan]%}%n: %{$fg[yellow]%}%~%{$reset_color%} $(git_prompt_info) $(hg_ps1)→ '
+PROMPT='%{$fg[cyan]%}%n: %{$fg[yellow]%}%~%{$reset_color%} $(git_prompt_info)→ '
