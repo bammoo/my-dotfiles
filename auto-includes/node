@@ -10,6 +10,10 @@ alias cid='cnpm install --save-dev'
 alias cuis='cnpm uninstall --save'
 alias cuid='cnpm uninstall --save-dev'
 
+# yarn
+alias ya='yarn add'
+alias yad='yarn add -D'
+
 
 # view npm module latest version 
 mver() {
