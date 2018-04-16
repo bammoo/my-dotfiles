@@ -22,6 +22,8 @@ alias chrome='open -a "Google Chrome"'
 alias o='open'
 alias oo='open .'
 
+alias gb='git branch'
+alias gbl='git branch -l'
 alias gcm='git checkout master'
 alias gc='git checkout'
 alias grb='git rebase'
