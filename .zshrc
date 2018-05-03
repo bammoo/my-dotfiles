@@ -51,8 +51,6 @@ export PATH=/usr/local/share/npm/bin:$PATH
 
 source $HOME/perl5/perlbrew/etc/bashrc
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-
 # nodejs library
 export PATH=$HOME/local/bin:$PATH
 export PATH=/usr/local/bin:$PATH
