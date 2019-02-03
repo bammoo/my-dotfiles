@@ -53,6 +53,9 @@ source $HOME/perl5/perlbrew/etc/bashrc
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
+# mysql
+export PATH=/usr/local/mysql/bin:$PATH
+
 # nodejs library
 export PATH=$HOME/local/bin:$PATH
 export PATH=/usr/local/bin:$PATH

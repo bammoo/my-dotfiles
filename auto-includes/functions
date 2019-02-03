@@ -28,7 +28,7 @@ function _ddv_open {
     folder=${1:0:${#1}-4}
     if [[ -d $folder ]]; then
       # let fasd remember this folder path
-      fasd --add "$f"
+      fasd --add "$folder"
       b3 "$folder"
     else
       echo "解压出错!"
