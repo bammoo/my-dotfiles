@@ -5,7 +5,8 @@ copy () {
   `$1 | tr -d '\n' | pbcopy`;
 }
 
-alias c='copy'
+alias wh='which'
+alias c='code'
 alias cpd='copy pwd'
 
 alias ....='cd ../../..'
@@ -22,8 +23,11 @@ alias chrome='open -a "Google Chrome"'
 alias o='open'
 alias oo='open .'
 
+alias gb='git branch'
+alias gbl='git branch -l'
 alias gcm='git checkout master'
 alias gc='git checkout'
+alias gcb='git checkout -b'
 alias grb='git rebase'
 alias grbm='git rebase master'
 alias gl='git pull'

@@ -11,9 +11,17 @@ alias cuis='cnpm uninstall --save'
 alias cuid='cnpm uninstall --save-dev'
 
 # yarn
+alias yr='yarn dev'
+alias ys='yarn start'
+alias yb='yarn build'
+alias yga='yarn global add'
 alias ya='yarn add'
 alias yad='yarn add -D'
+alias ygu='yarn global upgrade --latest'
+alias yu='yarn upgrade --latest'
+alias yud='yarn upgrade -D --latest'
 
+alias yvue='yarn upgrade vue vue-template-compiler'
 
 # view npm module latest version 
 mver() {
