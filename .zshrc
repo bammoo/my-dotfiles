@@ -1,7 +1,8 @@
 # Path to your oh-my-zsh configuration.
 
 ZSH=$HOME/.oh-my-zsh
-ZSH_CUSTOM=$HOME/dotfiles/my-dotfiles/zsh-custom
+ZSH_CUSTOM_HOME=$HOME/code/my-dotfiles
+ZSH_CUSTOM=$ZSH_CUSTOM_HOME/zsh-custom
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -49,7 +50,7 @@ source $ZSH/oh-my-zsh.sh
 # Customize to your needs...
 export PATH=/usr/local/share/npm/bin:$PATH
 
-source $HOME/perl5/perlbrew/etc/bashrc
+# source $HOME/perl5/perlbrew/etc/bashrc
 
 # nodejs library
 export PATH=$HOME/local/bin:$PATH
@@ -64,7 +65,7 @@ export PATH="$HOME/perl5/bin:$PATH";
 
 eval "$(fasd --init posix-alias zsh-hook)"
 
-for f in ~/dotfiles/my-dotfiles/auto-includes/*; 
+for f in $ZSH_CUSTOM_HOME/auto-includes/*; 
   do source $f;
 done
 
