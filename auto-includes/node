@@ -31,6 +31,9 @@ mver() {
 cver() {
   cat node_modules/${1}/package.json | grep 'version'
 }
+rver() {
+  cat ./package-lock.json | grep -A1 '^    "'${1}'": {'
+}
 # view module version in package.json
 ccver() {
   cat ./package.json | grep "${1}"

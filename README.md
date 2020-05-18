@@ -4,6 +4,10 @@
 
 ## oh-my-zsh 配置
 
+### 安装依赖
+
+ - 安装 fasd https://github.com/clvv/fasd
+
 ### 安装
 
 fork 当前 repo 并 `git clone` 到自己的 home 目录下，如
@@ -117,5 +121,3 @@ wip
 192.168.1.100
 192.168.2.100
 ```
-
-
