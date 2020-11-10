@@ -24,6 +24,7 @@ alias o='open'
 alias oo='open .'
 
 alias gb='git branch'
+alias gd='git branch -d'
 alias gbl='git branch -l'
 alias g='git checkout master'
 alias gcm='git checkout master'
