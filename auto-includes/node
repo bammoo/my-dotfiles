@@ -38,3 +38,7 @@ rver() {
 ccver() {
   cat ./package.json | grep "${1}"
 }
+
+
+alias lb="lerna bootstrap"
+alias lv="lerna run dev"
