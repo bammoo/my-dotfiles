@@ -1,14 +1,14 @@
 #!/bin/bash
 
-# cnpm
-alias ci='cnpm install'
-alias cig='cnpm install --global'
-alias clsg='cnpm ls --global'
-alias cis='cnpm install --save'
-alias cid='cnpm install --save-dev'
+alias ni='npm install'
+alias nid='npm install -D'
+# alias nig='cnpm install --global'
+# alias clsg='cnpm ls --global'
+# alias cis='cnpm install --save'
+# alias cid='cnpm install --save-dev'
 
-alias cuis='cnpm uninstall --save'
-alias cuid='cnpm uninstall --save-dev'
+# alias cuis='cnpm uninstall --save'
+# alias cuid='cnpm uninstall --save-dev'
 
 # yarn
 alias yr='yarn dev'
