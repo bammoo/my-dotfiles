@@ -1,5 +1,6 @@
 #!/bin/bash
 
+alias np='npm publish'
 alias ni='npm install'
 alias nid='npm install -D'
 # alias nig='cnpm install --global'
