@@ -68,6 +68,8 @@ export PERL_MM_OPT="INSTALL_BASE=$HOME/perl5";
 export PERL5LIB="$HOME/perl5/lib/perl5:$PERL5LIB";
 export PATH="$HOME/perl5/bin:$PATH";
 
+alias nasm=/Users/cc/webfolder/github/nasm-2.15.05/nasm
+
 eval "$(fasd --init posix-alias zsh-hook)"
 
 for f in $ZSH_CUSTOM_HOME/auto-includes/*; 
@@ -76,3 +78,7 @@ done
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh" || true
+
+export PATH="/usr/local/opt/php@7.2/bin:$PATH"
+export PATH="/usr/local/opt/php@7.2/sbin:$PATH"
