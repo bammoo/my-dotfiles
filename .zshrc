@@ -68,8 +68,6 @@ export PERL_MM_OPT="INSTALL_BASE=$HOME/perl5";
 export PERL5LIB="$HOME/perl5/lib/perl5:$PERL5LIB";
 export PATH="$HOME/perl5/bin:$PATH";
 
-alias nasm=/Users/cc/webfolder/github/nasm-2.15.05/nasm
-
 eval "$(fasd --init posix-alias zsh-hook)"
 
 for f in $ZSH_CUSTOM_HOME/auto-includes/*; 
